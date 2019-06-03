@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                android:contentDescription="@string/imageCategoria"
+                android:layout_width="@dimen/img_category"
+                android:layout_height="@dimen/img_category"
+                android:id="@+id/img_product"/>
+
+        <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"/>
+
+        <TextView
+                android:id="@+id/txtErrorImg"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:text="No image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </FrameLayout>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+        <TextView
+                android:id="@+id/txt_product_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textSize="18sp"
+                app:fontFamily="@font/roboto_medium"
+                android:background="@android:color/transparent"
+                android:gravity="left"/>
+        <TextView
+                android:id="@+id/txt_product_description"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="2"
+                app:fontFamily="@font/roboto_regular"
+                android:background="@android:color/transparent"
+                android:gravity="left"/>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:id="@+id/txt_precoDe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textSize="12sp"
+                    app:fontFamily="@font/roboto_medium"
+                    android:background="@android:color/transparent"
+                    android:gravity="center|left"/>
+            <TextView
+                    android:id="@+id/txt_precoPor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textSize="20sp"
+                    android:textColor="@color/tomato"
+                    app:fontFamily="@font/roboto_bold"
+                    android:gravity="center|right"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <ImageView
+            android:src="@drawable/disclosure_indicator"
+            android:contentDescription="@string/indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
+</LinearLayout>

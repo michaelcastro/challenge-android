@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Lodjinha</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">a Lodjinha</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="home">Home</string>
+    <string name="about">Sobre o aplicativo</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="categories">Categorias</string>
+    <string name="best_seller">Mais vendidos</string>
+    <string name="banner">Banner</string>
+    <string name="imageCategoria">Imagem da categoria</string>
+    <string name="indicator">Indicador touch</string>
+</resources>

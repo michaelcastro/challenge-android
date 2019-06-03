@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_margin="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                android:contentDescription="@string/imageCategoria"
+                android:layout_width="@dimen/img_category"
+                android:layout_height="@dimen/img_category"
+                android:id="@+id/img_category"/>
+
+        <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"/>
+        
+        <TextView
+                android:id="@+id/txtErrorImg"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:text="No image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </FrameLayout>
+
+    <TextView
+            android:id="@+id/txt_category_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="13sp"
+            app:fontFamily="@font/roboto_regular"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/black"
+            android:gravity="center"/>
+</LinearLayout>
