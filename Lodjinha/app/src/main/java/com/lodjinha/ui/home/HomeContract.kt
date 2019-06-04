@@ -4,7 +4,6 @@ import com.lodjinha.data.model.Banner
 import com.lodjinha.data.model.Category
 import com.lodjinha.data.model.Product
 
-
 class HomeContract {
     interface View {
         fun loadBanners()

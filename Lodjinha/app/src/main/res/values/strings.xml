@@ -16,4 +16,6 @@
     <string name="banner">Banner</string>
     <string name="imageCategoria">Imagem da categoria</string>
     <string name="indicator">Indicador touch</string>
+    <string name="loading_products">Carregando produtos…</string>
+    <string name="allshow">Todos Exibidos</string>
 </resources>

@@ -1,17 +1,12 @@
 package com.lodjinha.ui.home
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.GridLayout
-import android.widget.TextView
 import android.widget.Toast
 
 import com.lodjinha.R
@@ -20,9 +15,8 @@ import com.lodjinha.data.model.Category
 import kotlinx.android.synthetic.main.fragment_home.*
 import android.support.v7.widget.LinearLayoutManager
 import com.lodjinha.data.model.Product
-import com.lodjinha.ui.category.CategoryDetailActivity
+import com.lodjinha.ui.category.CategoryActivity
 import com.lodjinha.ui.product.ProductActivity
-import kotlinx.android.synthetic.main.fragment_home.view.*
 
 
 class HomeFragment : Fragment(), HomeContract.View {
@@ -58,7 +52,7 @@ class HomeFragment : Fragment(), HomeContract.View {
     }
 
     override fun updateProducts(data: ArrayList<Product>) {
-        val adapter = ProductAdapter(data) {
+        val adapter = ProductAdapter(data, false) {
             presenter.openProductActivity(it)
         }
         recycler_best_seller.setHasFixedSize(true)
@@ -95,7 +89,8 @@ class HomeFragment : Fragment(), HomeContract.View {
     }
 
     override fun openCategoryDetailActivity(category: Category) {
-        val intent = Intent(context, CategoryDetailActivity::class.java)
+        val intent = Intent(context, CategoryActivity::class.java)
+        intent.putExtra("CATEGORY", category)
         startActivity(intent)
     }
 

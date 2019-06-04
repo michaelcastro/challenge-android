@@ -6,6 +6,7 @@ import com.lodjinha.data.model.DataCategory
 import com.lodjinha.data.model.DataProduct
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Query
 import java.util.ArrayList
 
 interface ApiRequest {
@@ -17,4 +18,7 @@ interface ApiRequest {
 
     @GET("produto/maisvendidos")
     fun requestBestSellerProduct() : Call<DataProduct>
+
+    @GET("produto")
+    fun requestProductByCategory(@Query("categoriaId") idCategory: String, @Query("offset") offset: Int, @Query("limit") limit: Int) : Call<DataProduct>
 }

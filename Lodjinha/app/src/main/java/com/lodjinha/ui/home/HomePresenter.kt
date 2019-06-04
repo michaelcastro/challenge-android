@@ -8,11 +8,13 @@ import com.lodjinha.data.model.Product
 import com.lodjinha.data.source.remote.BannerRemoteDataSource
 import com.lodjinha.data.source.remote.CategoryRemoteDataSource
 import com.lodjinha.data.source.remote.ProductRemoteDataSource
+import com.lodjinha.ui.category.CategoryContract
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 class HomePresenter : HomeContract.Presenter {
+
     override fun openProductActivity(product: Product) {
         view.openProductActivity(product)
     }
