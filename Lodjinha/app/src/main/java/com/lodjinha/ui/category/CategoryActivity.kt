@@ -96,6 +96,7 @@ class CategoryActivity : AppCompatActivity(), CategoryContract.View {
 
     override fun openProductActivity(product: Product) {
         val intent = Intent(this, ProductActivity::class.java)
+        intent.putExtra("PRODUCT", product)
         startActivity(intent)
     }
 

@@ -7,6 +7,9 @@ import com.lodjinha.data.source.remote.CategoryRemoteDataSource
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class CategoryPresenter : CategoryContract.Presenter {
     override var offset = 0
@@ -16,6 +19,12 @@ class CategoryPresenter : CategoryContract.Presenter {
     internal lateinit var view: CategoryContract.View
     private var model: CategoryContract.Model = CategoryRemoteDataSource()
 
+
+    @SuppressLint("CheckResult")
+    fun reserveProduct(id: String) {
+
+
+    }
 
     @SuppressLint("CheckResult")
     override fun loadProductsNextPage(id: String, totalItemCount: Int, lastVisibleItem: Int) {

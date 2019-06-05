@@ -70,6 +70,7 @@ class HomeFragment : Fragment(), HomeContract.View {
 
     override fun openProductActivity(product: Product) {
         val intent = Intent(context, ProductActivity::class.java)
+        intent.putExtra("PRODUCT", product)
         startActivity(intent)
     }
 

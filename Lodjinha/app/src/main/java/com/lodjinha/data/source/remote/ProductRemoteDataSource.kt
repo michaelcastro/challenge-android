@@ -2,10 +2,14 @@ package com.lodjinha.data.source.remote
 
 import com.lodjinha.BuildConfig
 import com.lodjinha.data.model.DataProduct
+import com.lodjinha.ui.product.ProductContract
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class ProductRemoteDataSource {
+class ProductRemoteDataSource : ProductContract.Model {
     private var request: ApiRequest
 
     init {
@@ -16,8 +20,13 @@ class ProductRemoteDataSource {
         request = retrofit.create(ApiRequest::class.java)
     }
 
-    fun getBestSellerProduct(): DataProduct? {
+    override fun getBestSellerProduct(): DataProduct? {
         val call = request.requestBestSellerProduct()
         return call.execute().body()
+    }
+
+    override fun reserveProduct(idProduct : String): Call<Any> {
+        val call = request.reserveProduct(idProduct.toInt())
+        return call
     }
 }
