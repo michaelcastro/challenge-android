@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Lodjinha</string>
+    <string name="app_name">a Lodjinha</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">a Lodjinha</string>
@@ -18,4 +18,8 @@
     <string name="indicator">Indicador touch</string>
     <string name="loading_products">Carregando produtos…</string>
     <string name="allshow">Todos Exibidos</string>
+    <string name="preco_de">De</string>
+    <string name="preco_por">Por</string>
+    <string name="developer">Michael Costa de Castro</string>
+    <string name="data">05 de junho de 2019</string>
 </resources>
