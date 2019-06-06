@@ -6,14 +6,13 @@ import android.os.Bundle
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import com.lodjinha.R
 import com.lodjinha.data.model.Category
 import com.lodjinha.data.model.Product
-import com.lodjinha.ui.home.ProductAdapter
+import com.lodjinha.ui.adapter.ProductAdapter
 import com.lodjinha.ui.product.ProductActivity
 import kotlinx.android.synthetic.main.activity_category.*
 

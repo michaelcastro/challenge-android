@@ -1,4 +1,4 @@
-package com.lodjinha.ui.home
+package com.lodjinha.ui.adapter
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -50,10 +50,11 @@ class ProductAdapter(val products: ArrayList<Product>, val hasPagination: Boolea
             with(view) {
                 txt_product_name.text = product.nome
                 txt_product_description.text = product.descricao
-                txt_precoDe.text = "De " + product.precoDe
+
+                txt_precoDe.text = "${resources.getString(R.string.preco_de)} ${product.precoDe}"
                 txt_precoDe.setPaintFlags(txt_precoDe.getPaintFlags() or STRIKE_THRU_TEXT_FLAG)
 
-                txt_precoPor.text = "Por " + product.precoPor
+                txt_precoPor.text = "${resources.getString(R.string.preco_por)} ${product.precoPor}"
 
                 Picasso.with(context).load(product.urlImagem).fit().centerInside().into(img_product, object : Callback {
                     override fun onSuccess() {

@@ -10,7 +10,7 @@
                 android:title="@string/home"/>
         <item
                 android:id="@+id/nav_about"
-                android:icon="@drawable/logo_sobre"
+                android:icon="@drawable/tag_menu"
                 android:title="@string/about"/>
     </group>
 

@@ -1,10 +1,15 @@
 package com.lodjinha.ui.home
 
-import com.lodjinha.data.model.Banner
-import com.lodjinha.data.model.Category
-import com.lodjinha.data.model.Product
+import com.lodjinha.data.model.*
 
 class HomeContract {
+
+    interface Model {
+        fun getAllBanners(): DataBanner?
+        fun getBestSellerProduct(): DataProduct?
+        fun getAllCategories(): DataCategory?
+    }
+
     interface View {
         fun loadBanners()
         fun loadCategories()

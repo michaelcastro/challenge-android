@@ -15,6 +15,9 @@ import com.lodjinha.data.model.Category
 import kotlinx.android.synthetic.main.fragment_home.*
 import android.support.v7.widget.LinearLayoutManager
 import com.lodjinha.data.model.Product
+import com.lodjinha.ui.adapter.CardGroupAdapter
+import com.lodjinha.ui.adapter.ProductAdapter
+import com.lodjinha.ui.adapter.SliderBannerAdapter
 import com.lodjinha.ui.category.CategoryActivity
 import com.lodjinha.ui.product.ProductActivity
 
@@ -37,6 +40,7 @@ class HomeFragment : Fragment(), HomeContract.View {
         loadBanners()
         loadCategories()
         loadProducts()
+        activity?.title = "a Lodjinha"
     }
 
     override fun loadCategories() {

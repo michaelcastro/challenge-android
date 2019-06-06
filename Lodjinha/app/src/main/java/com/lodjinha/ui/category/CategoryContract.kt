@@ -1,5 +1,6 @@
 package com.lodjinha.ui.category
 
+import com.lodjinha.data.model.DataCategory
 import com.lodjinha.data.model.Product
 
 interface CategoryContract {
@@ -28,5 +29,6 @@ interface CategoryContract {
 
     interface Model {
         fun loadProducts(idCategory: String, offset : Int, limit : Int) : ArrayList<Product>
+        fun getAllCategories(): DataCategory?
     }
 }

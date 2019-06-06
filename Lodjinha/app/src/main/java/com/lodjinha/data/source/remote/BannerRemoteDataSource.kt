@@ -1,12 +1,9 @@
 package com.lodjinha.data.source.remote
 
-import android.util.Log
 import com.lodjinha.BuildConfig
-import com.lodjinha.data.model.Banner
 import com.lodjinha.data.model.DataBanner
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-
 
 class BannerRemoteDataSource {
 

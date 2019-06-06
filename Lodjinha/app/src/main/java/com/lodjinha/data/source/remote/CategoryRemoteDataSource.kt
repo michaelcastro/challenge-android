@@ -1,7 +1,6 @@
 package com.lodjinha.data.source.remote
 
 import android.annotation.SuppressLint
-import android.util.Log
 import com.lodjinha.BuildConfig
 import com.lodjinha.data.model.DataCategory
 import com.lodjinha.data.model.Product
@@ -9,7 +8,7 @@ import com.lodjinha.ui.category.CategoryContract
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class CategoryRemoteDataSource() : CategoryContract.Model {
+class CategoryRemoteDataSource : CategoryContract.Model {
 
     private var request: ApiRequest
 
@@ -21,8 +20,7 @@ class CategoryRemoteDataSource() : CategoryContract.Model {
         request = retrofit.create(ApiRequest::class.java)
     }
 
-
-    fun getAllCategories(): DataCategory? {
+    override fun getAllCategories(): DataCategory? {
         val call = request.requestCategories()
         return call.execute().body()
     }

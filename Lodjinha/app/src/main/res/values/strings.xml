@@ -21,5 +21,6 @@
     <string name="preco_de">De</string>
     <string name="preco_por">Por</string>
     <string name="developer">Michael Costa de Castro</string>
-    <string name="data">05 de junho de 2019</string>
+    <string name="data">06 de junho de 2019</string>
+    <string name="reserve_loading">Reservando produto…</string>
 </resources>

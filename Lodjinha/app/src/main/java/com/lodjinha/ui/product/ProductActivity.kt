@@ -58,7 +58,7 @@ class ProductActivity : AppCompatActivity() , ProductContract.View{
     }
 
     fun reserveProductAction(view : View){
-        showDialogLoading("Reservando produto...")
+        showDialogLoading(resources.getString(R.string.reserve_loading))
         presenter.reserveProduct(product.id)
     }
 
@@ -66,7 +66,8 @@ class ProductActivity : AppCompatActivity() , ProductContract.View{
         closeDialogLoading()
         val builder = AlertDialog.Builder(this)
         builder.setMessage(message)
-            .setPositiveButton(android.R.string.yes) { dialog, which ->
+            .setCancelable(false)
+            .setPositiveButton(android.R.string.yes) { _, _ ->
                 finish()
             }
             .show()

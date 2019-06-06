@@ -8,10 +8,6 @@
                 android:focusableInTouchMode="false"
                 tools:context=".ui.category.CategoryActivity">
 
-<!--
-    <include android:id="@+id/app_bar" layout="@layout/app_bar_layout"/>
--->
-
     <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_categories"
             android:layout_width="match_parent"

@@ -3,6 +3,7 @@ package com.lodjinha.data.model
 import android.os.Parcel
 import android.os.Parcelable
 
+@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class Product(
     val id: String = "",
     val nome: String = "",

@@ -1,4 +1,4 @@
-package com.lodjinha.ui.home
+package com.lodjinha.ui.adapter
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater

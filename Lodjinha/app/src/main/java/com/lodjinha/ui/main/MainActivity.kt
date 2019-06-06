@@ -13,14 +13,9 @@ import kotlinx.android.synthetic.main.app_bar_layout.*
 
 import android.support.v4.app.Fragment
 import com.lodjinha.ui.about.AboutFragment
-import java.util.*
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-    internal var active: Fragment? = null
-
-    private lateinit var mFragments: EnumMap<FragmentTypes, Fragment>
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,8 +26,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     fun configUi() {
-        mFragments = EnumMap(FragmentTypes::class.java)
-        changeFragment(getHome())
+        changeFragment(HomeFragment.newInstance())
+        nav_view_menu.itemIconTintList = null
     }
 
     private fun setUpDrawerMenu() {
@@ -60,21 +55,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         var shouldChange = true
         when (item.itemId) {
             R.id.nav_home -> {
-                if (item.isChecked()) shouldChange = false;
+                if (item.isChecked) shouldChange = false
                 else {
-                    fragment = getHome();
-                    item.setChecked(true);
+                    fragment = HomeFragment.newInstance()
                 }
             }
             R.id.nav_about -> {
-                if (item.isChecked()) shouldChange = false;
+                if (item.isChecked) shouldChange = false
                 else {
-                    fragment = getAbout();
-                    item.setChecked(true);
+                    fragment = AboutFragment.newInstance()
                 }
             }
         }
 
+        item.isChecked = true
         if (shouldChange) {
             changeFragment(fragment)
         }
@@ -92,35 +86,4 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
-    private fun getHome(): Fragment {
-        if (!mFragments.containsKey(FragmentTypes.HOME)) {
-            mFragments.put(FragmentTypes.HOME, FragmentTypes.HOME.getFragment())
-            mFragments.get(FragmentTypes.HOME)!!.setRetainInstance(true)
-        }
-        return mFragments.get(FragmentTypes.HOME)!!
-    }
-
-    private fun getAbout(): Fragment {
-        if (!mFragments.containsKey(FragmentTypes.ABOUT)) {
-            mFragments.put(FragmentTypes.ABOUT, FragmentTypes.ABOUT.getFragment())
-            mFragments.get(FragmentTypes.ABOUT)!!.setRetainInstance(true)
-        }
-        return mFragments.get(FragmentTypes.ABOUT)!!
-    }
-
-
-    enum class FragmentTypes {
-        HOME {
-            override fun getFragment(): Fragment {
-                return HomeFragment.newInstance()
-            }
-        },
-        ABOUT {
-            override fun getFragment(): Fragment {
-                return AboutFragment.newInstance()
-            }
-        };
-
-        abstract fun getFragment(): Fragment
-    }
 }

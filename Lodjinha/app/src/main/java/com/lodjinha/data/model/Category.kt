@@ -3,6 +3,7 @@ package com.lodjinha.data.model
 import android.os.Parcel
 import android.os.Parcelable
 
+@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 data class Category(val id: String, val descricao: String, val urlImagem: String) : Parcelable {
 
     override fun writeToParcel(dest: Parcel, flags: Int) {

@@ -1,19 +1,16 @@
 package com.lodjinha.ui.home
 
 import android.annotation.SuppressLint
-import android.util.Log
 import com.lodjinha.data.model.Banner
 import com.lodjinha.data.model.Category
 import com.lodjinha.data.model.Product
-import com.lodjinha.data.source.remote.BannerRemoteDataSource
-import com.lodjinha.data.source.remote.CategoryRemoteDataSource
-import com.lodjinha.data.source.remote.ProductRemoteDataSource
-import com.lodjinha.ui.category.CategoryContract
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 class HomePresenter : HomeContract.Presenter {
+
+    private var model: HomeContract.Model = HomeModel()
 
     override fun openProductActivity(product: Product) {
         view.openProductActivity(product)
@@ -25,9 +22,9 @@ class HomePresenter : HomeContract.Presenter {
 
     @SuppressLint("CheckResult")
     override fun loadProducts() {
-        val productRemoteDataSource = ProductRemoteDataSource()
+
         Observable.fromCallable {
-            productRemoteDataSource.getBestSellerProduct()
+            model.getBestSellerProduct()
         }
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -48,9 +45,8 @@ class HomePresenter : HomeContract.Presenter {
 
     @SuppressLint("CheckResult")
     override fun loadCategories() {
-        val categoryRemoteDataSource = CategoryRemoteDataSource()
         Observable.fromCallable {
-            categoryRemoteDataSource.getAllCategories()
+            model.getAllCategories()
         }
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -77,9 +73,9 @@ class HomePresenter : HomeContract.Presenter {
 
     @SuppressLint("CheckResult")
     override fun loadBanners() {
-        val bannerRemoteDataSource = BannerRemoteDataSource()
+
         Observable.fromCallable {
-            bannerRemoteDataSource.getAllBanners()
+            model.getAllBanners()
         }
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

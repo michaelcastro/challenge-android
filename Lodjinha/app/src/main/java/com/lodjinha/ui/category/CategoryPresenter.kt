@@ -19,13 +19,6 @@ class CategoryPresenter : CategoryContract.Presenter {
     internal lateinit var view: CategoryContract.View
     private var model: CategoryContract.Model = CategoryRemoteDataSource()
 
-
-    @SuppressLint("CheckResult")
-    fun reserveProduct(id: String) {
-
-
-    }
-
     @SuppressLint("CheckResult")
     override fun loadProductsNextPage(id: String, totalItemCount: Int, lastVisibleItem: Int) {
         if ((totalItemCount - 1) == lastVisibleItem) {
